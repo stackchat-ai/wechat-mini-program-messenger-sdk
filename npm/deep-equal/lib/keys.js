@@ -1,0 +1,1 @@
+function shim(e){var s=[];for(var t in e)s.push(t);return s}exports=module.exports="function"==typeof Object.keys?Object.keys:shim,exports.shim=shim;
