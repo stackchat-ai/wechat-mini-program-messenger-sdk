@@ -1,4 +1,4 @@
-# Stackchat Mini-Program Messenger
+# Stackchat Mini-Program Messenger (0.2.1)
 
 The official Stackchat mini-program messenger.
 
