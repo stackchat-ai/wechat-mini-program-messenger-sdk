@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="{{anonymousState__temp}}"><text class="{{BASE_CLASS_NAME + '_time'}}">{{seen}} {{timeDisplay}} {{delivered}}</text></view></block>

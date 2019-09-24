@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view><block><block wx:if="{{hasLoadedImage}}"><view></view></block><block wx:else>{{"loading"}}</block></block><image mode="widthFix" bindload="onLoad" src="{{mediaUrl}}" class="{{anonymousState__temp}}"></image></view></block>

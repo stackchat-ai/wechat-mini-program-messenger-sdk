@@ -1,0 +1,1 @@
+"use strict";var define=require("../define-properties/index.js"),implementation=require("./implementation.js"),getPolyfill=require("./polyfill.js"),shim=require("./shim.js"),flagsBound=Function.call.bind(implementation);define(flagsBound,{getPolyfill:getPolyfill,implementation:implementation,shim:shim}),module.exports=flagsBound;

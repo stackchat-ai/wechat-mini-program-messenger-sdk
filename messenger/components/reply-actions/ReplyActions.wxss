@@ -1,0 +1,1 @@
+button::after{border:0}.sc-reply_button{padding:16rpx;border-radius:16rpx;border:1rpx solid #00aeff;line-height:30rpx;display:inline-block;margin-left:12rpx;color:#424242;margin-bottom:12rpx;font-size:31.5rpx}.sc-reply_container{text-align:right;position:relative;display:block;padding-bottom:10rpx;margin-right:22.5rpx}
