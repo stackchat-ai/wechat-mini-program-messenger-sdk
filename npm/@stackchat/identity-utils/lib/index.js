@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var cognito_1=require("./cognito.js");exports.convertCognitoIdToUserId=cognito_1.convertCognitoIdToUserId;

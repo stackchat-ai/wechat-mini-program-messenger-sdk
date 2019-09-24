@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js");function startOfYear(e){var r=parse(e),a=new Date(0);return a.setFullYear(r.getFullYear(),0,1),a.setHours(0,0,0,0),a}module.exports=startOfYear;
