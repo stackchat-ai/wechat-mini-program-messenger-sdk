@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><block wx:if="{{hasError}}">{{fallbackMessageNode}}</block><block wx:else><slot></slot></block></block>

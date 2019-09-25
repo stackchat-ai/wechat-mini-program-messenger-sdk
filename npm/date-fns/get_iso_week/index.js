@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js"),startOfISOWeek=require("../start_of_iso_week/index.js"),startOfISOYear=require("../start_of_iso_year/index.js"),MILLISECONDS_IN_WEEK=6048e5;function getISOWeek(e){var r=parse(e),t=startOfISOWeek(r).getTime()-startOfISOYear(r).getTime();return Math.round(t/MILLISECONDS_IN_WEEK)+1}module.exports=getISOWeek;

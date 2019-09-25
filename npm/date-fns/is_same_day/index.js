@@ -1,0 +1,1 @@
+var startOfDay=require("../start_of_day/index.js");function isSameDay(a,t){var e=startOfDay(a),r=startOfDay(t);return e.getTime()===r.getTime()}module.exports=isSameDay;

@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="{{anonymousState__temp}}"><image src="{{avatarUrl || empty_user}}"></image></view></block>

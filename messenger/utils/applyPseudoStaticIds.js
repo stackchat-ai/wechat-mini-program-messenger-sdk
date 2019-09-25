@@ -1,0 +1,1 @@
+"use strict";function applyPseudoStaticIds(s){s.items&&0<s.items.length&&s.items.forEach(function(t,e){t.id=s.id+"_item_"+e,t.actions&&t.actions.length&&t.actions.forEach(function(t,i){t.id=s.id+"_item_"+e+"_action_"+i})})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.applyPseudoStaticIds=applyPseudoStaticIds;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var DEFAULT_LOCALE=exports.DEFAULT_LOCALE="en-US",DATE_FNS_LOCALES=exports.DATE_FNS_LOCALES=["en-GB","en-US","zh-CN","zh-TW"];

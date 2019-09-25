@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "image-message": "../image-message/ImageMessage",
+    "action": "../action/Action"
+  }
+}
