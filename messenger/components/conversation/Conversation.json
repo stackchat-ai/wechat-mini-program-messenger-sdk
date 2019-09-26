@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "before-display-error-boundary": "../before-display-error-boundary/BeforeDisplayErrorBoundary",
+    "message": "../message/Message",
+    "timestamp-header": "../timestamp-header/TimestampHeader",
+    "reply-actions": "../reply-actions/ReplyActions",
+    "spinner": "../spinner/Spinner"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "avatar": "../avatar/Avatar",
+    "text-message": "../text-message/TextMessage",
+    "image-message": "../image-message/ImageMessage",
+    "carousel-message": "../carousel-message/CarouselMessage",
+    "message-status": "../message-status/MessageStatus"
+  }
+}

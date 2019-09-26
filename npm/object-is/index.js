@@ -1,0 +1,1 @@
+"use strict";var NumberIsNaN=function(r){return r!=r};module.exports=function(r,u){return 0===r&&0===u?1/r==1/u:r===u||!(!NumberIsNaN(r)||!NumberIsNaN(u))};

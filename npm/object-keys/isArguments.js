@@ -1,0 +1,1 @@
+"use strict";var toStr=Object.prototype.toString;module.exports=function(t){var e=toStr.call(t),o="[object Arguments]"===e;return o=o||"[object Array]"!==e&&null!==t&&"object"==typeof t&&"number"==typeof t.length&&0<=t.length&&"[object Function]"===toStr.call(t.callee)};

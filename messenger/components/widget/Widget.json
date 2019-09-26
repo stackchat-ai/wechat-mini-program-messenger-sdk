@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "conversation": "../conversation/Conversation",
+    "chat-input": "../chat-input/ChatInput"
+  }
+}
