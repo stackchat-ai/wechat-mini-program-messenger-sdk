@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="sc-reply_container"><button class="sc-reply_button" bindtap="anonymousFunc0" style="{{item.$loopState__temp2}}" wx:key="$loopState__temp4" wx:for="{{loopArray1}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">{{item.$original.text}}</button></view></block>

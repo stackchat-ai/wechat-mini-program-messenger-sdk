@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view style="{{anonymousState__temp}}" class="carousel-container"><view class="scroll-container" style="{{anonymousState__temp2}}"><block><block wx:if="{{items}}"><carousel-item wx:key="$original.id" wx:for="{{loopArray2}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__11}}"></carousel-item></block></block></view></view></block>
