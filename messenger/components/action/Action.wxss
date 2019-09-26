@@ -1,0 +1,1 @@
+.sc-action{margin-bottom:12rpx;font-size:36rpx}.sc-action .btn{display:block;white-space:inherit;border-radius:16rpx;margin-right:16rpx;margin-left:16rpx;text-align:center;padding:16rpx}.sc-action .btn:hover{opacity:.7}.sc-action:last-child{margin-bottom:0}

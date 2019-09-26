@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="sc-footer"><input type="text" class="sc-footer_input-container" value="{{text}}" bindinput="onInput" placeholder="{{inputPlaceholderText}}"/><button class="{{anonymousState__temp}}" bindtap="onSendMessage">{{sendButtonText}}</button></view></block>

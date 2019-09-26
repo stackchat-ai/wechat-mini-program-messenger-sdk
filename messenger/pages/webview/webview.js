@@ -1,0 +1,1 @@
+"use strict";Page({data:{pageUrl:""},onLoad:function(a){var t=getApp().stackchat._webviewUrl;t||wx.navigateBack(),this.setData({pageUrl:t})}});

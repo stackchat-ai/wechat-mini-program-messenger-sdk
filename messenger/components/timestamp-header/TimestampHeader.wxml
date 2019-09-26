@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="sc-timestamp_header">{{formattedValue}}</view></block>

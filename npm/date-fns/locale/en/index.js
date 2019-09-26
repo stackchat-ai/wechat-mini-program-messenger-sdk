@@ -1,0 +1,1 @@
+var buildDistanceInWordsLocale=require("./build_distance_in_words_locale/index.js"),buildFormatLocale=require("./build_format_locale/index.js");module.exports={distanceInWords:buildDistanceInWordsLocale(),format:buildFormatLocale()};

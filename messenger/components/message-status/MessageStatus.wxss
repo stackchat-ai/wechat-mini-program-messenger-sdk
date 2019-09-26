@@ -1,0 +1,1 @@
+.sc-message-status-indicator,.sc-retry{font-weight:400;color:#b2b2b2;margin-top:5rpx;margin-left:77rpx}.sc-message-status-indicator_time,.sc-retry_time{font-size:24rpx}.sc-message-status-indicator--right,.sc-retry--right{text-align:right}
