@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js");function startOfDay(r){var e=parse(r);return e.setHours(0,0,0,0),e}module.exports=startOfDay;
