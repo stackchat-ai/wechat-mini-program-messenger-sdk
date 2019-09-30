@@ -6,7 +6,7 @@ The official Stackchat mini-program messenger.
 The MP Messenger allows developers to easily add the stackchat messenger client to a miniprogram and supports the same features that are available on the web messenger version.
 
 # Installation
-In order to install the messenger client into your project you will need to clone or download the source code from this repository and copy across the messenger and npm directory into your project. The directories need to be added at a top level in order for them to correctly resolve their dependencies.
+In order to install the messenger client into your project you will need to clone or download the source code from this repository and copy across the messenger and npm directory into your project. If you are simply including the project into the main bundle then the directories need to be added at a top level in order for them to correctly resolve their dependencies. There are some example below of how to include the messenger as it's own tab within your application or as a subPackage.
 
 ```
 /src
@@ -17,29 +17,7 @@ In order to install the messenger client into your project you will need to clon
   app.json
 ```
 
-## App Configuration
-The client is able of generating webviews based on content it receives from the conversation author, in order to load webviews you will need to ensure that the `urlCheck` flag is set to false in your `project.config.json` file.
-
-#### Example
-```json
-// project.config.json
-{
-  "miniprogramRoot": "./",
-  "projectname": <project-name>,
-  "description": <description>,
-  "appid": <id>,
-  "setting": {
-    "urlCheck": false, <-- Must be false
-    "es6": false,
-    "postcss": false,
-    "minified": false
-  },
-  "compileType": "miniprogram"
-}
-```
-
-## Messenger Client Page
-The messenger client will occupy the entirety of the page it is added to, since mini-programs don't allow ui components to persist between pages we strongly recommend that you add the web client as a tab to your program, you can add it as a page, however when you want to open the chat widget you will need to create a link to navigate to that page.
+### Messenger as a tab page.
 
 #### Example
 
@@ -57,9 +35,7 @@ To add the widget as a new tab you can do the following:
 
 ```xml
 <!-- chat-tab.wxml -->
-<block wx:if="{{$taroCompReady}}">
-    <messenger></messenger>
-</block>
+<block><messenger></messenger></block>
 ```
 
 ```json
@@ -70,8 +46,6 @@ To add the widget as a new tab you can do the following:
   }
 }
 ```
-
-Finally we need to register our page inside of the app and the webview page in order to have them render correctly. Here is an example setup of the chat-tab.
 
 ```json
 // app.json
@@ -100,6 +74,86 @@ Finally we need to register our page inside of the app and the webview page in o
 }
 ```
 
+### Messenger as a subPackage
+If you would like to split the messenger out of the main package of you app in order to keep the file size small, you can easily split out the code into a subpackage. Before you do this however make sure that you [understand the limitations of sub packages within the mini-program ecosystem]("https://developers.weixin.qq.com/miniprogram/en/dev/framework/subpackages.html")
+
+#### Layout
+Your subpackage contents should be laid out following these conventions.
+```
+/stackchat-messenger
+  /messenger
+  /npm
+  index.js
+  index.json
+  index.wxml
+```
+The `index.json` and `index.wxml` files should look as follows:
+
+```json
+// index.json
+{
+  "usingComponents": {
+    "messenger": "./messenger/Messenger"
+  }
+}
+```
+
+```xml
+<!-- index.wxml -->
+<block><messenger></messenger></block>
+```
+
+#### Subpackage Application Config
+Add the following configuration options to your package folder.
+```json
+//app.json
+{
+  "subpackages": [
+    {
+      "root": "pages/stackchat", // This should be the subpackage directory relative to your app root.
+      "name": "messenger",
+      "pages": [
+        "index",
+        "messenger/pages/webview/webview",
+        "messenger/Messenger"
+      ]
+    }
+  ],
+  "preloadRule": { // Only add this if you want to preload the messenger.
+    "preloadRule": {
+    "pages/my/index": {
+      "packages": ["messenger"]
+    }
+  }
+}
+```
+
+## App Configuration
+The client is able of generating webviews based on content it receives from the conversation author, in order to load webviews you will need to ensure that the `urlCheck` flag is set to false in your `project.config.json` file.
+
+#### Example
+```json
+// project.config.json
+{
+  "miniprogramRoot": "./",
+  "projectname": <project-name>,
+  "description": <description>,
+  "appid": <id>,
+  "setting": {
+    "urlCheck": false, <-- Must be false
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
+```
+
+## Messenger Client Page
+The messenger client will occupy the entirety of the page it is added to, since mini-programs don't allow ui components to persist between pages we strongly recommend that you add the web client as a tab to your program, you can add it as a page, however when you want to open the chat widget you will need to create a link to navigate to that page.
+
+Finally we need to register our page inside of the app and the webview page in order to have them render correctly. Here is an example setup of the chat-tab.
+
 ## Messenger Configuration
 The fullset of configuration options avaialble to the messenger can be seen on the web-messenger project page which can be found here
 
@@ -117,7 +171,6 @@ In order to configure the messenger you will need to add a `stackchat` property 
     region: "cn"
   }
 ```
-
 
 ## API
 The mini-program API that is exposed to consumers is the same API that is available in the web-messenger version of this SDK there are however some implementation differences.
