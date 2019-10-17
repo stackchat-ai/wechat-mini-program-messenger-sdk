@@ -1,9 +1,9 @@
-# Stackchat Mini-Program Messenger
+# Stackchat Mini Program Messenger
 
-The official Stackchat mini-program messenger.
+The official Stackchat Mini Program SDK.
 
 # Description
-The MP Messenger allows developers to easily add the stackchat messenger client to a miniprogram and supports the same features that are available on the web messenger version.
+The MP Messenger allows developers to easily add the stackchat messenger client to a mini program and supports the same features that are available on the web messenger version.
 
 # Installation
 In order to install the messenger client into your project you will need to clone or download the source code from this repository and copy across the messenger and npm directory into your project. If you are simply including the project into the main bundle then the directories need to be added at a top level in order for them to correctly resolve their dependencies. There are some example below of how to include the messenger as it's own tab within your application or as a subPackage.
@@ -75,7 +75,7 @@ To add the widget as a new tab you can do the following:
 ```
 
 ### Messenger as a subPackage
-If you would like to split the messenger out of the main package of you app in order to keep the file size small, you can easily split out the code into a subpackage. Before you do this however make sure that you [understand the limitations of sub packages within the mini-program ecosystem]("https://developers.weixin.qq.com/miniprogram/en/dev/framework/subpackages.html")
+If you would like to split the messenger out of the main package of you app in order to keep the file size small, you can easily split out the code into a subpackage. Before you do this however make sure that you [understand the limitations of sub packages within the mini program ecosystem]("https://developers.weixin.qq.com/miniprogram/en/dev/framework/subpackages.html")
 
 #### Layout
 Your subpackage contents should be laid out following these conventions.
@@ -150,7 +150,7 @@ The client is able of generating webviews based on content it receives from the 
 ```
 
 ## Messenger Client Page
-The messenger client will occupy the entirety of the page it is added to, since mini-programs don't allow ui components to persist between pages we strongly recommend that you add the web client as a tab to your program, you can add it as a page, however when you want to open the chat widget you will need to create a link to navigate to that page.
+The messenger client will occupy the entirety of the page it is added to, since mini programs don't allow ui components to persist between pages we strongly recommend that you add the web client as a tab to your program, you can add it as a page, however when you want to open the chat widget you will need to create a link to navigate to that page.
 
 Finally we need to register our page inside of the app and the webview page in order to have them render correctly. Here is an example setup of the chat-tab.
 
@@ -173,9 +173,17 @@ In order to configure the messenger you will need to add a `stackchat` property 
 ```
 
 ## API
-The mini-program API that is exposed to consumers is the same API that is available in the web-messenger version of this SDK there are however some implementation differences.
+The mini program API that is exposed to consumers is the same API that is available in the web-messenger version of this SDK there are however some implementation differences.
 
-Due to the way mini-programs work we are unable to garuntee API availability at runtime, pages in a miniprogram are not made available until they are loaded and since many of the API methods are only available after init which happens when the messenger page is loaded, consumers need to be careful to perform a runtime check that a messenger instance is running before they begin calling public methods which require it. To do this we have provided the convenience method `isInitialized()` to check that the messenger has loaded.
+Due to the way mini programs work we are unable to garuntee API availability at runtime, pages in a mini program are not made available until they are loaded and since many of the API methods are only available after init which happens when the messenger page is loaded, consumers need to be careful to perform a runtime check that a messenger instance is running before they begin calling public methods which require it. To do this we have provided the convenience method `isInitialized()` to check that the messenger has loaded, in conjunction with this there exists an event system which can listen for the `'ready'` event to check when the messenger API is available, it can be consumed as follows.
+
+```javascript
+import { on, simulateMessage } from "./messenger";
+
+on("ready", function () {
+  simulateMessage("Hello World!");
+});
+```
 
 Likewise because we can't garuntee that the files will be available imediately on app load we have exposed the public API through explicit imports, instead of searching for a global `stackchat` object from which to call the convenience methods, consumers should import public methods directly from the SDK.
 
@@ -223,6 +231,15 @@ Takes in an optional second parameter for displaying an avatar associated with t
 ```javascript
 import { simulateMessage } from "../messenger"; 
 simulateMessage(message);
+```
+
+#### triggerPostback(payload, metadata)
+Manually trigger a postback message on the users behalf.
+
+```javascript
+stackchat.triggerPostback(payload, metadata).then(() => {
+    console.log("postback sent")
+})
 ```
 
 #### setDelegate(delegate)
