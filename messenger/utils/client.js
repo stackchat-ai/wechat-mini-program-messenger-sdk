@@ -1,0 +1,1 @@
+"use strict";function getClientInfo(e){return{platform:"weapp",info:{}}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.getClientInfo=getClientInfo;

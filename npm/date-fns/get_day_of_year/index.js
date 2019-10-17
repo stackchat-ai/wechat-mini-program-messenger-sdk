@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js"),startOfYear=require("../start_of_year/index.js"),differenceInCalendarDays=require("../difference_in_calendar_days/index.js");function getDayOfYear(e){var r=parse(e);return differenceInCalendarDays(r,startOfYear(r))+1}module.exports=getDayOfYear;

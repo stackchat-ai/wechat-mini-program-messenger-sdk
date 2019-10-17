@@ -1,0 +1,1 @@
+var getISOYear=require("../get_iso_year/index.js"),startOfISOWeek=require("../start_of_iso_week/index.js");function startOfISOYear(e){var r=getISOYear(e),t=new Date(0);return t.setFullYear(r,0,4),t.setHours(0,0,0,0),startOfISOWeek(t)}module.exports=startOfISOYear;

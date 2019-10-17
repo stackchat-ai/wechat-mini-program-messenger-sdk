@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var CONNECT_NOTIFICATION_DELAY_IN_SECONDS=exports.CONNECT_NOTIFICATION_DELAY_IN_SECONDS=86400;
