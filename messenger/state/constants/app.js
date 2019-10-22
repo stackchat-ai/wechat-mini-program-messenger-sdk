@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var WIDGET_STATE=exports.WIDGET_STATE={OPENED:Symbol("opened"),CLOSED:Symbol("closed"),INIT:Symbol("init"),EMBEDDED:Symbol("embedded")};

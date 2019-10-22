@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js");function differenceInMilliseconds(e,r){var i=parse(e),n=parse(r);return i.getTime()-n.getTime()}module.exports=differenceInMilliseconds;

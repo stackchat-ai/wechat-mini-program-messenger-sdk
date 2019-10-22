@@ -1,0 +1,1 @@
+var isDate=require("../is_date/index.js");function isValid(i){if(isDate(i))return!isNaN(i);throw new TypeError(toString.call(i)+" is not an instance of Date")}module.exports=isValid;
