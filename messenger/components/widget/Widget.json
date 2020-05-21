@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "status-overlay": "../status-overlay/StatusOverlay",
+    "conversation": "../conversation/Conversation",
+    "chat-input": "../chat-input/ChatInput"
+  }
+}

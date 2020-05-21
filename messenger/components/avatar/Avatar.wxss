@@ -1,0 +1,1 @@
+.sc-avatar{width:65rpx;height:65rpx;margin-right:12rpx;opacity:1}.sc-avatar image{display:inline-block;width:65rpx;height:65rpx;border-radius:50%}.sc-avatar_img{margin-bottom:0}.sc-avatar--hidden{opacity:0}

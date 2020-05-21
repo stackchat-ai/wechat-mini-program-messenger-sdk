@@ -1,0 +1,1 @@
+var parse=require("../parse/index.js");function startOfWeek(e,r){var t=r&&Number(r.weekStartsOn)||0,a=parse(e),s=a.getDay(),u=(s<t?7:0)+s-t;return a.setDate(a.getDate()-u),a.setHours(0,0,0,0),a}module.exports=startOfWeek;

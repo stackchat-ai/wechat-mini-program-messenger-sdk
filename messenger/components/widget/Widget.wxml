@@ -1,0 +1,1 @@
+<block wx:if="{{$taroCompReady}}"><view class="sc-widget"><status-overlay></status-overlay><view class="sc-widget_conversation-wrapper"><conversation></conversation></view><view class="sc-widget_chat-input-wrapper"><chat-input></chat-input></view></view></block>

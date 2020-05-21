@@ -1,0 +1,1 @@
+var startOfDay=require("../start_of_day/index.js"),MILLISECONDS_IN_MINUTE=6e4,MILLISECONDS_IN_DAY=864e5;function differenceInCalendarDays(e,I){var t=startOfDay(e),a=startOfDay(I),r=t.getTime()-t.getTimezoneOffset()*MILLISECONDS_IN_MINUTE,f=a.getTime()-a.getTimezoneOffset()*MILLISECONDS_IN_MINUTE;return Math.round((r-f)/MILLISECONDS_IN_DAY)}module.exports=differenceInCalendarDays;

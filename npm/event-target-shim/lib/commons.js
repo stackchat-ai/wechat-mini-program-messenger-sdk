@@ -1,0 +1,1 @@
+"use strict";var createUniqueKey=exports.createUniqueKey="undefined"!=typeof Symbol?Symbol:function(e){return"[["+e+"_"+Math.random().toFixed(8).slice(2)+"]]"};exports.LISTENERS=createUniqueKey("listeners"),exports.CAPTURE=1,exports.BUBBLE=2,exports.ATTRIBUTE=3,exports.newNode=function(e,t){return{listener:e,kind:t,next:null}};

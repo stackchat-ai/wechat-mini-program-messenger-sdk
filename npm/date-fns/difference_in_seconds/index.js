@@ -1,0 +1,1 @@
+var differenceInMilliseconds=require("../difference_in_milliseconds/index.js");function differenceInSeconds(e,n){var i=differenceInMilliseconds(e,n)/1e3;return 0<i?Math.floor(i):Math.ceil(i)}module.exports=differenceInSeconds;

@@ -1,0 +1,1 @@
+"use strict";var getDay=Date.prototype.getDay,tryDateObject=function(t){try{return getDay.call(t),!0}catch(t){return!1}},toStr=Object.prototype.toString,dateClass="[object Date]",hasToStringTag="function"==typeof Symbol&&"symbol"==typeof Symbol.toStringTag;module.exports=function(t){return"object"==typeof t&&null!==t&&(hasToStringTag?tryDateObject(t):toStr.call(t)===dateClass)};
